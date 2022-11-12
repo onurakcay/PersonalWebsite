@@ -48,5 +48,6 @@ h3 {
 .subTitle {
   font-size: 24px;
   font-weight: 100;
+  text-align: center;
 }
 </style>

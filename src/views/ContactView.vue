@@ -89,7 +89,7 @@ export default {
 </template>
 
 <style lang="scss" >
-@media (min-width: 1024px) {
+
   .contact {
     display: flex;
     flex-direction: column;
@@ -116,8 +116,10 @@ export default {
       color: #fff;
       font-weight: 100;
       margin-bottom: 0.5rem;
+      text-align: center;
     }
     p {
+      text-align: center;
       a {
         background: transparent;
         border: none;
@@ -136,5 +138,5 @@ export default {
       opacity: 1;
     }
   }
-}
+
 </style>

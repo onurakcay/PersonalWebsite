@@ -35,7 +35,6 @@ export default {
 </template>
 
 <style lang="scss" >
-@media (min-width: 1024px) {
   .about {
     display: flex;
     flex-direction: column;
@@ -69,5 +68,5 @@ export default {
       opacity: 1;
     }
   }
-}
+
 </style>

@@ -98,6 +98,7 @@ export default {
     animation: fadeInAnimation ease 3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+    gap: .5rem;
     .submit {
       display: flex;
       justify-content: center;

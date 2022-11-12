@@ -1,16 +1,26 @@
-<script setup>
-defineProps({
-  msg: {
-    type: String,
-    required: true,
+
+<script>
+import profile from "../assets/profile.png";
+export default {
+  data() {
+    return {
+      msg: "Hello 🖐️",
+      name: "Welcome to my personal Web Page",
+      width: 200,
+      aspectRatio: 16 / 9,
+      profile: profile,
+    };
   },
-});
+};
 </script>
 
 <template>
   <div class="greetings">
-    <h1 class="helloText">{{ msg }}</h1>
-    <v-avatar image="@/assets/profile.png" size="66"></v-avatar>
+    <v-avatar size="100" color="primary" class="avatar">
+      <v-img :aspect-ratio="aspectRatio" :width="width" :src="profile" cover />
+    </v-avatar>
+    <div class="helloText">{{ msg }}</div>
+    <div class="subTitle">{{ name }}</div>
   </div>
 </template>
 
@@ -26,13 +36,19 @@ h3 {
 }
 .greetings {
   width: 100%;
-  h1,
-  h3 {
-    text-align: center;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .helloText {
   font-size: 48px;
+  color: #fff;
   font-weight: bold;
+}
+.subTitle {
+  font-size: 24px;
+  color: #fff;
+  font-weight: 100;
 }
 </style>

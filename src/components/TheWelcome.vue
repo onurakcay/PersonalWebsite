@@ -43,12 +43,10 @@ h3 {
 }
 .helloText {
   font-size: 48px;
-  color: #fff;
   font-weight: bold;
 }
 .subTitle {
   font-size: 24px;
-  color: #fff;
   font-weight: 100;
 }
 </style>

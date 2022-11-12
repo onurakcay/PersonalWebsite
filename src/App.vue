@@ -1,17 +1,25 @@
 <script >
 import { RouterLink, RouterView } from "vue-router";
+import { useRouter } from "vue-router";
+
 export default {
   data() {
     return {
       progress: 0,
-      pages: ["about"],
+      pages: ["about", "contact"],
       pageIndex: 0,
       hideProgressBar: false,
     };
   },
   methods: {
     progressBar() {
-      if (this.pageIndex != this.pages.length) {
+      let currenRoute = this.currentRoute;
+      console.log(currenRoute);
+
+      if (
+        this.pageIndex != this.pages.length &&
+        (currenRoute == undefined || currenRoute == "home")
+      ) {
         if (this.progress != 100) {
           setTimeout(() => {
             this.progress += 10;
@@ -34,9 +42,17 @@ export default {
   },
   created() {
     this.progressBar();
+
+    // console.log("Route Object", currentRoute);
     addEventListener("click", () => {
       this.cancelProgressBar();
     });
+  },
+  computed: {
+    currentRoute() {
+      const router = useRouter();
+      return this.$router.currentRoute.value.name;
+    },
   },
 };
 </script>
@@ -44,6 +60,7 @@ export default {
 <template class="mainWrapper">
   <RouterView />
   <div
+    v-if="currentRoute == 'home'"
     :class="{
       progressBar: !hideProgressBar,
       'progressBar hide': hideProgressBar,

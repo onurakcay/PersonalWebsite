@@ -11,10 +11,10 @@ export default {
 
       valid: false,
       firstname: "",
-      lastname: "",
-      nameRules: [
-        (v) => !!v || "Name is required",
-        (v) => v.length <= 10 || "Name must be less than 10 characters",
+      message: "",
+      messageRules: [
+        (v) => !!v || "Message is required",
+        (v) => v.length >= 10 || "Messsage must be grater than 10 characters",
       ],
       email: "",
       emailRules: [
@@ -26,6 +26,12 @@ export default {
   methods: {
     navigate(path) {
       this.$router.push(path);
+    },
+    async submit() {
+      const { valid } = await this.$refs.form.validate();
+      if (valid) {
+        this.loading = true;
+      }
     },
   },
 };
@@ -53,7 +59,7 @@ export default {
       /></a>
     </div>
     <p class="mt-3 mb-1">OR</p>
-    <v-form v-model="valid" class="form">
+    <v-form ref="form" v-model="valid" lazy-validation class="form">
       <v-container>
         <v-text-field
           v-model="email"
@@ -62,17 +68,18 @@ export default {
           required
           variant="outlined"
           :disabled="loading"
-          hide-details
+          
         ></v-text-field>
         <v-textarea
-          class="mt-4 mb-6"
+          class="mt-2 mb-6"
           label="Yor message..."
+          v-model="message"
+          :rules="messageRules"
           variant="outlined"
           :disabled="loading"
-          hide-details
         ></v-textarea>
         <div class="submit">
-          <v-btn icon @click="loading = true" :loading="loading">
+          <v-btn icon @click="submit" :loading="loading">
             <font-awesome-icon icon="fa-solid fa-paper-plane" />
           </v-btn>
         </div>

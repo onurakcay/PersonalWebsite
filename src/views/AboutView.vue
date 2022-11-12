@@ -43,6 +43,7 @@ export default {
     animation: fadeInAnimation ease 3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+    gap: .5rem;
     .subTitle {
       font-size: 24px;
       color: #fff;
@@ -50,6 +51,7 @@ export default {
       margin-bottom: 0.5rem;
     }
     p {
+      text-align: center;
       a {
         background: transparent;
         border: none;

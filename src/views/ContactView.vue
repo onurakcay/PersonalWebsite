@@ -50,11 +50,11 @@ export default {
     <p>You can reach me using following option below.</p>
     <p>Here, check out my social links</p>
     <div class="socials">
-      <a href=""><font-awesome-icon icon="fa-brands fa-github" size="lg" /></a>
-      <a href=""
+      <a href="https://github.com/onurakcay" target="_blank"><font-awesome-icon icon="fa-brands fa-github" size="lg" /></a>
+      <a href="https://www.linkedin.com/in/onurakcaytr/" target="_blank"
         ><font-awesome-icon icon="fa-brands fa-linkedin-in" size="lg"
       /></a>
-      <a href=""
+      <a href="mailto:onurakcay.tr@gmail.com"
         ><font-awesome-icon icon="fa-solid fa-envelope " size="lg"
       /></a>
     </div>
@@ -79,7 +79,7 @@ export default {
           :disabled="loading"
         ></v-textarea>
         <div class="submit">
-          <v-btn icon @click="submit" :loading="loading">
+          <v-btn icon @click="submit" :loading="loading" color="white">
             <font-awesome-icon icon="fa-solid fa-paper-plane" />
           </v-btn>
         </div>

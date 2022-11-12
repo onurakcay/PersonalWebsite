@@ -3,6 +3,9 @@ import vueLogo from "../assets/techs/vue.png";
 import laravelLogo from "../assets/techs/laravel.png";
 import awsLogo from "../assets/techs/aws.png";
 import flutterLogo from "../assets/techs/flutter.png";
+import dockerLogo from "../assets/techs/docker.png";
+import drupalLogo from "../assets/techs/drupal.png";
+import rabbitLogo from "../assets/techs/rabbit.png";
 
 export default {
   data() {
@@ -13,11 +16,11 @@ export default {
         { name: "Laravel", url: laravelLogo },
         { name: "Flutter", url: flutterLogo },
         { name: "AWS", url: awsLogo },
-        { name: "Docker", url: awsLogo },
-        { name: "RabbitMQ", url: awsLogo },
-        { name: "Drupal", url: awsLogo },
+        { name: "Docker", url: dockerLogo },
+        { name: "RabbitMQ", url: rabbitLogo },
+        { name: "Drupal", url: drupalLogo },
       ],
-      width: 200,
+      width: 50,
       aspectRatio: 16 / 9,
     };
   },
@@ -35,11 +38,11 @@ export default {
   <div class="techStack">
     <div class="closeButton" @click="navigate('about')">Back to About</div>
     <v-row no-gutters>
-      <v-col v-for="(logo, index) in logos" :key="index">
+      <v-col v-for="(logo, index) in logos" :key="index" cols="12" sm="12" md="3">
         <v-card class="ma-2 pa-2" max-width="344" variant="tonal" :key="item">
           <v-card-item>
             <div>
-              <div class="text-h6 mb-1">
+              <div class="text-h6 mb-1 cardImage">
                 <v-img
                   :aspect-ratio="aspectRatio"
                   :width="width"
@@ -73,6 +76,9 @@ export default {
     width: 100%;
     margin-right: 1rem;
     margin-bottom: 1rem;
+  }
+  .cardImage{
+    display: flex;
   }
 }
 </style>
